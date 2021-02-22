@@ -92,7 +92,7 @@ public class StandardScheduleController implements Initializable {
                 System.out.println("\nMonth :" + monthList.get(month_position));
                 System.out.println("Week :" +week_choicebox.getValue().toString());
                 month_position=month_position+frequency;
-                if(month_position>12)
+                if(month_position>11)
                 {
                     month_position=month_position-12;
 

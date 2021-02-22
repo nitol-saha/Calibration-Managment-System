@@ -29,11 +29,12 @@ public class StandardScheduleDbQuery {
 
     public int add_sd_schedule(StandardScheduleModel model){
         System.out.println(model.getMonth());
-        String query= "INSERT INTO `cms`.`standard_schedule_table` (`ID`, ?) VALUES (?,?)";
+        String query= "INSERT INTO `cms`.`standard_schedule_table` (`ID`,`Month`,`Week` ) VALUES (?,?,?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
 
-            statement.setString(1, model.getMonth());
-            statement.setString(2, model.getSd_id());
+
+            statement.setString(1, model.getSd_id());
+            statement.setString(2, model.getMonth());
             statement.setString(3, model.getWeek());
             int result= statement.executeUpdate();
             return result;
