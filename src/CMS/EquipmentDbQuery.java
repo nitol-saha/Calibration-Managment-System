@@ -8,17 +8,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EqDbQuery {
+public class EquipmentDbQuery {
     Connection connection;
-    public EqDbQuery(){
+    public EquipmentDbQuery(){
         connection =DBConnector.connect();
     }
 
-    public ObservableList<EqModel> get_eq_list() throws SQLException {
-      ObservableList<EqModel> list= FXCollections.observableArrayList();
+    public ObservableList<EquipmentModel> get_eq_list() throws SQLException {
+      ObservableList<EquipmentModel> list= FXCollections.observableArrayList();
         try (ResultSet resultSet = connection.createStatement().executeQuery("select * from equipment_table")) {
             while (resultSet.next()){
-                EqModel eq_model = new EqModel(resultSet.getInt("ID"), resultSet.getString("Equipment ID"),resultSet.getString("Equipment Name"),resultSet.getString("Facility Name"));
+                EquipmentModel eq_model = new EquipmentModel(resultSet.getInt("ID"), resultSet.getString("Equipment ID"),resultSet.getString("Equipment Name"),resultSet.getString("Facility Name"));
                 list.add(eq_model);
             }
             return list;
@@ -36,7 +36,7 @@ public class EqDbQuery {
         }
 
     }
-    public int add_eq(EqModel model){
+    public int add_eq(EquipmentModel model){
         String query= "INSERT INTO `cms`.`equipment_table` (`Equipment ID`, `Equipment Name`, `Facility Name`) VALUES (?,?,?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, model.getEq_id());
@@ -53,7 +53,7 @@ public class EqDbQuery {
         }
 
     }
-    public int update_eq(EqModel model){
+    public int update_eq(EquipmentModel model){
         String query= "UPDATE `cms`.`equipment_table` SET `Equipment ID` =?, `Equipment Name`=?, `Facility Name`=? WHERE `equipment_table`.`ID`=?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, model.getEq_id());
@@ -72,7 +72,7 @@ public class EqDbQuery {
 
 
     }
-    public int delete_eq(EqModel model){
+    public int delete_eq(EquipmentModel model){
         String query= "DELETE FROM `cms`.`equipment_table` WHERE `equipment_table`.`ID` = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, model.getId());

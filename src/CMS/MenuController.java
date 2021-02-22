@@ -40,11 +40,11 @@ public class MenuController {
 
     }
 
-    public void ScheduleWindow(ActionEvent event) throws IOException {
+    public void StandardScheduleWindow (ActionEvent event) throws  IOException {
         ((Node)event.getSource()).getScene().getWindow().hide();
         Stage primaryStage= new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("Schedule.fxml"));
-        primaryStage.setTitle("Schedule View");
+        Parent root= FXMLLoader.load(getClass().getResource("StandardSchedule.fxml"));
+        primaryStage.setTitle("Standard Device Schedule");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 

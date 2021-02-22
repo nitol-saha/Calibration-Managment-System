@@ -1,9 +1,9 @@
 package CMS;
 
-public class SdModel {
+public class StandardDeviceModel {
     private String sd_id,sd_name,sd_model, sd_serial_no;
 
-    public SdModel(String sd_id, String sd_name, String sd_model, String sd_serial_no) {
+    public StandardDeviceModel(String sd_id, String sd_name, String sd_model, String sd_serial_no) {
         this.sd_id = sd_id;
         this.sd_name = sd_name;
         this.sd_model = sd_model;

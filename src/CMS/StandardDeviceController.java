@@ -19,11 +19,11 @@ import java.sql.SQLException;
 import java.text.DateFormatSymbols;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class StandardDeviceController implements Initializable {
-    SdDbQuery query;
+
+    StandardDeviceDbQuery query;
 
 
     @FXML
@@ -50,30 +50,23 @@ public class StandardDeviceController implements Initializable {
     private TableColumn sd_table_col_sd_serial_no;
     @FXML
     private TableView sd_table;
-    @FXML
-    private ChoiceBox month_choicebox;
-    @FXML
-    private ChoiceBox week_checkbox;
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        query= new SdDbQuery();
-        DateFormatSymbols dfs = new DateFormatSymbols();
-        String[] months_temp = dfs.getMonths();
-        String[] months= Arrays.copyOf(months_temp, months_temp.length-1);
-        List<String> monthtList = Arrays.asList(months);
-        ObservableList<String> MonthList = FXCollections.observableList(monthtList);
-        ObservableList<String> WeekList = FXCollections.observableArrayList("1st Week","2nd Week","3d Week","4th Week");
-        sd_table_col_sd_id.setCellValueFactory(new PropertyValueFactory<SdModel, String>("sd_id"));
-        sd_table_col_sd_name.setCellValueFactory(new PropertyValueFactory<SdModel, String>("sd_name"));
-        sd_table_col_sd_model.setCellValueFactory(new PropertyValueFactory<SdModel, String>("sd_model"));
-        sd_table_col_sd_serial_no.setCellValueFactory(new PropertyValueFactory<SdModel, String>("sd_serial_no"));
-        month_choicebox.setItems(MonthList);
-        week_checkbox.setItems(WeekList);
+        query= new StandardDeviceDbQuery();
+        sd_table_col_sd_id.setCellValueFactory(new PropertyValueFactory<StandardDeviceModel, String>("sd_id"));
+        sd_table_col_sd_name.setCellValueFactory(new PropertyValueFactory<StandardDeviceModel, String>("sd_name"));
+        sd_table_col_sd_model.setCellValueFactory(new PropertyValueFactory<StandardDeviceModel, String>("sd_model"));
+        sd_table_col_sd_serial_no.setCellValueFactory(new PropertyValueFactory<StandardDeviceModel, String>("sd_serial_no"));
+
 
 
         try {
             sd_table.setItems(query.get_sd_list());
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -92,7 +85,14 @@ public class StandardDeviceController implements Initializable {
     }
 
     public void add_sd (ActionEvent event){
-        SdModel model = new SdModel(SdID.getText(), SdName.getText(),SdModel.getText(), SdSerialNo.getText());
+        StandardDeviceModel model = new StandardDeviceModel(SdID.getText(), SdName.getText(),SdModel.getText(), SdSerialNo.getText());
+        int count = query.add_sd(model);
+
+        refreshTable();
+
+    }
+    public void add_sd_schedule (ActionEvent event){
+        StandardDeviceModel model = new StandardDeviceModel(SdID.getText(), SdName.getText(),SdModel.getText(), SdSerialNo.getText());
         int count = query.add_sd(model);
 
         refreshTable();

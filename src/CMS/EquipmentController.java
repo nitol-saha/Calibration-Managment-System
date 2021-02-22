@@ -1,6 +1,5 @@
 package CMS;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class EquipmentController  implements Initializable {
 
-    EqDbQuery query;
+    EquipmentDbQuery query;
 
     @FXML
     private TextField EqID;
@@ -28,13 +27,13 @@ public class EquipmentController  implements Initializable {
     @FXML
     private TextField FaName;
     @FXML
-    private TableColumn <EqModel, String>eq_table_col_eq_id;
+    private TableColumn <EquipmentModel, String>eq_table_col_eq_id;
     @FXML
-    private TableColumn <EqModel, String> eq_table_col_eq_name;
+    private TableColumn <EquipmentModel, String> eq_table_col_eq_name;
     @FXML
-    private TableColumn <EqModel, String> eq_table_col_facility_name;
+    private TableColumn <EquipmentModel, String> eq_table_col_facility_name;
     @FXML
-    private TableView <EqModel> eq_table;
+    private TableView <EquipmentModel> eq_table;
     @FXML
     private Button EqAdd;
     @FXML
@@ -59,10 +58,10 @@ public class EquipmentController  implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        query= new EqDbQuery();
-        eq_table_col_eq_id.setCellValueFactory(new PropertyValueFactory<EqModel, String>("eq_id"));
-        eq_table_col_eq_name.setCellValueFactory(new PropertyValueFactory<EqModel, String>("eq_name"));
-        eq_table_col_facility_name.setCellValueFactory(new PropertyValueFactory<EqModel, String>("facility_name"));
+        query= new EquipmentDbQuery();
+        eq_table_col_eq_id.setCellValueFactory(new PropertyValueFactory<EquipmentModel, String>("eq_id"));
+        eq_table_col_eq_name.setCellValueFactory(new PropertyValueFactory<EquipmentModel, String>("eq_name"));
+        eq_table_col_facility_name.setCellValueFactory(new PropertyValueFactory<EquipmentModel, String>("facility_name"));
         try {
             eq_table.setItems(query.get_eq_list());
             eq_choicebox.setItems(query.get_eq_id_list());
@@ -74,7 +73,7 @@ public class EquipmentController  implements Initializable {
     }
 
     public void add_equipment (ActionEvent event){
-        EqModel model = new EqModel(0,EqID.getText(), EqName.getText(),FaName.getText());
+        EquipmentModel model = new EquipmentModel(0,EqID.getText(), EqName.getText(),FaName.getText());
         int count = query.add_eq(model);
 
         refreshTable();
@@ -84,7 +83,7 @@ public class EquipmentController  implements Initializable {
     }
 
     public void select_equipment (ActionEvent event){
-        EqModel model = eq_table.getSelectionModel().getSelectedItem();
+        EquipmentModel model = eq_table.getSelectionModel().getSelectedItem();
         ID.setText(Integer.toString(model.getId()));
         EqID.setText(model.getEq_id());
         EqName.setText(model.getEq_name());
@@ -93,7 +92,7 @@ public class EquipmentController  implements Initializable {
     }
 
     public void update_equipment (ActionEvent event){
-        EqModel model = new EqModel(Integer.parseInt(ID.getText()),EqID.getText(), EqName.getText(),FaName.getText());
+        EquipmentModel model = new EquipmentModel(Integer.parseInt(ID.getText()),EqID.getText(), EqName.getText(),FaName.getText());
         int count = query.update_eq(model);
         refreshTable();
 
@@ -101,7 +100,7 @@ public class EquipmentController  implements Initializable {
     }
 
     public void delete_equipment (ActionEvent event){
-        EqModel model = eq_table.getSelectionModel().getSelectedItem();
+        EquipmentModel model = eq_table.getSelectionModel().getSelectedItem();
 
         int count = query.delete_eq(model);
         refreshTable();
@@ -121,8 +120,8 @@ public class EquipmentController  implements Initializable {
 
 
         }
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
+        catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         EqID.clear();
         EqName.clear();

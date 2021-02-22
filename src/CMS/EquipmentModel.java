@@ -1,10 +1,10 @@
 package CMS;
 
-public class EqModel {
+public class EquipmentModel {
     private String eq_id,eq_name,facility_name;
     private int id;
 
-    public EqModel(int id , String eq_id, String eq_name, String facility_name) {
+    public EquipmentModel(int id , String eq_id, String eq_name, String facility_name) {
         this.id=id;
         this.eq_id = eq_id;
         this.eq_name = eq_name;
