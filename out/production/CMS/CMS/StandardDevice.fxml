@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.StandardDeviceController">
+   <children>
+      <Button fx:id="SdAdd" layoutX="14.0" layoutY="492.0" mnemonicParsing="false" onAction="#add_sd" prefHeight="52.0" prefWidth="168.0" text="Standard Device Add" />
+      <Button fx:id="SdUpdate" layoutX="192.0" layoutY="492.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="168.0" text="Standard Device Update" />
+      <Button fx:id="SdDelete" layoutX="373.0" layoutY="492.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="168.0" text="Standard Device Delete" />
+      <Button layoutX="518.0" layoutY="545.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="52.0" prefWidth="168.0" text="Menu" />
+      <TextField fx:id="SdID" layoutX="35.0" layoutY="26.0" promptText="Standard Device ID" />
+      <TextField fx:id="SdName" layoutX="192.0" layoutY="26.0" promptText="Standard Device Name" />
+      <TextField fx:id="SdModel" layoutX="350.0" layoutY="26.0" promptText="Model" />
+      <TextField fx:id="SdSerialNo" layoutX="510.0" layoutY="26.0" promptText="Serial Number" />
+      <TextField editable="false" layoutX="310.0" layoutY="558.0" opacity="0.0" promptText="ID" />
+      <TableView fx:id="sd_table" layoutX="22.0" layoutY="251.0" prefHeight="200.0" prefWidth="653.0">
+         <columns>
+            <TableColumn fx:id="sd_table_col_sd_id" prefWidth="120.0" text="Standard Device ID" />
+            <TableColumn fx:id="sd_table_col_sd_name" prefWidth="204.0" text="Standard Device Name" />
+            <TableColumn fx:id="sd_table_col_sd_model" prefWidth="160.0" text="Model" />
+            <TableColumn fx:id="sd_table_col_sd_serial_no" prefWidth="167.0" text="Serial No." />
+         </columns>
+      </TableView>
+      <ChoiceBox fx:id="month_choicebox" layoutX="261.0" layoutY="72.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="week_checkbox" layoutX="435.0" layoutY="72.0" prefWidth="150.0" />
+      <RadioButton layoutX="243.0" layoutY="118.0" mnemonicParsing="false" text=" Monthly" />
+      <RadioButton layoutX="338.0" layoutY="118.0" mnemonicParsing="false" text=" 3 Monthly" />
+      <RadioButton layoutX="440.0" layoutY="118.0" mnemonicParsing="false" text=" 6 Monthly" />
+      <RadioButton layoutX="541.0" layoutY="118.0" mnemonicParsing="false" text="Yearly" />
+      <Text layoutX="43.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Calibration Month &amp; Week" wrappingWidth="199.955078125" />
+      <Text layoutX="79.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calibration Frequecy" wrappingWidth="126.955078125" />
+   </children>
+</AnchorPane>

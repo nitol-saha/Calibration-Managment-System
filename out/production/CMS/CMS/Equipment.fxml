@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.EquipmentController">
+   <children>
+      <Button fx:id="EqAdd" layoutX="444.0" layoutY="101.0" mnemonicParsing="false" onAction="#add_equipment" prefHeight="52.0" prefWidth="168.0" text="Equipment Add" />
+      <Button fx:id="EqUpdate" layoutX="444.0" layoutY="176.0" mnemonicParsing="false" onAction="#update_equipment" prefHeight="52.0" prefWidth="168.0" text="Equipment Update" />
+      <Button fx:id="EqDelete" layoutX="444.0" layoutY="258.0" mnemonicParsing="false" onAction="#delete_equipment" prefHeight="52.0" prefWidth="168.0" text="Equipment Delete" />
+      <Button layoutX="518.0" layoutY="544.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="52.0" prefWidth="168.0" text="Menu" />
+      <TextField fx:id="EqID" layoutX="63.0" layoutY="115.0" promptText="Equipment ID" />
+      <TextField fx:id="EqName" layoutX="63.0" layoutY="167.0" promptText="Equipment Name" />
+      <TextField fx:id="FaName" layoutX="63.0" layoutY="216.0" promptText="Facility Name" />
+      <TableView fx:id="eq_table" layoutX="6.0" layoutY="325.0" prefHeight="200.0" prefWidth="413.0">
+        <columns>
+          <TableColumn fx:id="eq_table_col_eq_id" prefWidth="120.0" text="Equipment ID" />
+          <TableColumn fx:id="eq_table_col_eq_name" prefWidth="145.0" text="Equipment Name" />
+            <TableColumn fx:id="eq_table_col_facility_name" prefWidth="147.0" text="Facility Name" />
+        </columns>
+      </TableView>
+      <Button fx:id="EqSelect" layoutX="444.0" layoutY="342.0" mnemonicParsing="false" onAction="#select_equipment" prefHeight="52.0" prefWidth="168.0" text="Equipment Select" />
+      <TextField fx:id="ID" disable="true" editable="false" layoutX="63.0" layoutY="62.0" opacity="0.0" promptText="Serial No." />
+      <ChoiceBox fx:id="eq_choicebox" layoutX="244.0" layoutY="141.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
