@@ -1,7 +1,5 @@
 package CMS;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.DateFormatSymbols;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
+
 
 public class StandardDeviceController implements Initializable {
 
@@ -41,15 +37,15 @@ public class StandardDeviceController implements Initializable {
     @FXML
     private TextField SdSerialNo;
     @FXML
-    private TableColumn sd_table_col_sd_id;
+    private TableColumn <StandardDeviceModel, String>sd_table_col_sd_id;
     @FXML
-    private TableColumn sd_table_col_sd_name;
+    private TableColumn <StandardDeviceModel, String> sd_table_col_sd_name;
     @FXML
-    private TableColumn sd_table_col_sd_model;
+    private TableColumn <StandardDeviceModel, String> sd_table_col_sd_model;
     @FXML
-    private TableColumn sd_table_col_sd_serial_no;
+    private TableColumn <StandardDeviceModel, String> sd_table_col_sd_serial_no;
     @FXML
-    private TableView sd_table;
+    private TableView <StandardDeviceModel> sd_table;
 
 
 
@@ -91,11 +87,31 @@ public class StandardDeviceController implements Initializable {
         refreshTable();
 
     }
-    public void add_sd_schedule (ActionEvent event){
-        StandardDeviceModel model = new StandardDeviceModel(SdID.getText(), SdName.getText(),SdModel.getText(), SdSerialNo.getText());
-        int count = query.add_sd(model);
 
+    public void select_sd (ActionEvent event){
+        StandardDeviceModel model = sd_table.getSelectionModel().getSelectedItem();
+        SdID.setText(model.getSd_id());
+        SdName.setText(model.getSd_name());
+        SdModel.setText(model.getSd_model());
+        SdSerialNo.setText(model.getSd_serial_no());
+    }
+
+
+    public void update_sd (ActionEvent event){
+        StandardDeviceModel model = new StandardDeviceModel(SdID.getText(), SdName.getText(),SdModel.getText(), SdSerialNo.getText());
+        int count = query.update_sd(model);
         refreshTable();
+
+
+    }
+
+    public void delete_sd (ActionEvent event){
+        StandardDeviceModel model = sd_table.getSelectionModel().getSelectedItem();
+
+        int count = query.delete_sd(model);
+        int count1 = query.delete_sd_sch(model);
+        refreshTable();
+
 
     }
 
