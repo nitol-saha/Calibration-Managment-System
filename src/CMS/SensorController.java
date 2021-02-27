@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 public class SensorController implements Initializable {
 
 
+
     SensorDbQuery query;
 
 
@@ -50,6 +51,8 @@ public class SensorController implements Initializable {
     @FXML
     private TableColumn <SensorModel, String> sen_table_col_sen_serial_no;
     @FXML
+    private TableColumn <SensorModel, String> sen_table_col_eq_id;
+    @FXML
     private ChoiceBox eq_choicebox_sen;
 
     public void MenuWindow(ActionEvent event) throws IOException {
@@ -68,7 +71,7 @@ public class SensorController implements Initializable {
         sen_table_col_sen_name.setCellValueFactory(new PropertyValueFactory<SensorModel, String>("sen_name"));
         sen_table_col_sen_model.setCellValueFactory(new PropertyValueFactory<SensorModel, String>("sen_model"));
         sen_table_col_sen_serial_no.setCellValueFactory(new PropertyValueFactory<SensorModel, String>("sen_serial_no"));
-
+        sen_table_col_eq_id.setCellValueFactory(new PropertyValueFactory<SensorModel, String>("eq_id"));
 
 
         try {

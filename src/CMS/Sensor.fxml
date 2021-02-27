@@ -24,6 +24,7 @@
             <TableColumn fx:id="sen_table_col_sen_name" prefWidth="204.0" text="Sensor Name" />
             <TableColumn fx:id="sen_table_col_sen_model" prefWidth="160.0" text="Model" />
             <TableColumn fx:id="sen_table_col_sen_serial_no" prefWidth="167.0" text="Serial No." />
+            <TableColumn fx:id="sen_table_col_eq_id" prefWidth="167.0" text="Equipment ID" />
          </columns>
       </TableView>
       <ChoiceBox fx:id="eq_choicebox" layoutX="427.0" layoutY="95.0" prefWidth="150.0" />

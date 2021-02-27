@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -16,14 +17,17 @@
       <TextField fx:id="SenName" layoutX="202.0" layoutY="36.0" promptText="Sensor Name" />
       <TextField fx:id="SenModel" layoutX="360.0" layoutY="36.0" promptText="Model" />
       <TextField fx:id="SenSerialNo" layoutX="520.0" layoutY="36.0" promptText="Serial Number" />
-      <Button fx:id="SenSelect" layoutX="88.0" layoutY="105.0" mnemonicParsing="false" onAction="#select_sen" prefHeight="52.0" prefWidth="168.0" text="Select Equipment" />
+      <Button fx:id="SenSelect" layoutX="98.0" layoutY="107.0" mnemonicParsing="false" onAction="#select_sen" prefHeight="52.0" prefWidth="168.0" text="Select Sensor" />
       <TableView fx:id="sen_table" layoutX="24.0" layoutY="247.0" prefHeight="200.0" prefWidth="653.0">
          <columns>
             <TableColumn fx:id="sen_table_col_sen_id" prefWidth="120.0" text="Sensor ID" />
             <TableColumn fx:id="sen_table_col_sen_name" prefWidth="204.0" text="Sensor Name" />
             <TableColumn fx:id="sen_table_col_sen_model" prefWidth="160.0" text="Model" />
             <TableColumn fx:id="sen_table_col_sen_serial_no" prefWidth="167.0" text="Serial No." />
+            <TableColumn fx:id="sen_table_col_eq_id" prefWidth="167.0" text="Equipment ID" />
          </columns>
       </TableView>
+      <ChoiceBox fx:id="eq_choicebox" layoutX="427.0" layoutY="95.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="eq_choicebox_sen" layoutX="434.0" layoutY="95.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
