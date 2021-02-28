@@ -32,6 +32,8 @@ public class SignUpController implements Initializable {
     private RadioButton male;
     @FXML
     private RadioButton female;
+    @FXML
+    private Label msg;
 
 
     @Override
@@ -69,7 +71,19 @@ public class SignUpController implements Initializable {
 
     public void add_user (ActionEvent event){
         SignUPModel model = new SignUPModel(user.getText(), pass.getText(),f_name.getText(),  gender);
-        int count = query.user_add(model);
+
+        try {
+            int count = query.user_add(model);
+            msg.setText("Insertion Successful");
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            msg.setText("Insertion Failed");
+        }
+
+
 
     }
 

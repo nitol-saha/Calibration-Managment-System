@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
@@ -14,5 +16,12 @@
       <Button fx:id="AuthUser" layoutX="226.0" layoutY="546.0" mnemonicParsing="false" onAction="#auth_user" prefHeight="40.0" prefWidth="120.0" text="Authorize User" />
       <Button fx:id="MenuButton" layoutX="362.0" layoutY="544.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="40.0" prefWidth="120.0" text="Menu" />
       <Text layoutX="173.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unauthorize User List" />
+      <TableView fx:id="au_table" layoutX="60.0" layoutY="105.0" prefHeight="368.0" prefWidth="599.0">
+         <columns>
+            <TableColumn fx:id="au_table_col_username" prefWidth="177.0" text="Username" />
+            <TableColumn fx:id="au_table_col_fullname" prefWidth="216.0" text="Full Name" />
+            <TableColumn fx:id="au_table_col_gender" prefWidth="205.0" text="Gender" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

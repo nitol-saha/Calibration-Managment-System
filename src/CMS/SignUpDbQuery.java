@@ -14,6 +14,18 @@ public class SignUpDbQuery {
         connection =DBConnector.connect();
     }
 
+    public ObservableList<SignUPModel> get_au_list() throws SQLException {
+        ObservableList<SignUPModel> list= FXCollections.observableArrayList();
+        try (ResultSet resultSet = connection.createStatement().executeQuery("select * from signup_table")) {
+            while (resultSet.next()){
+                SignUPModel su_model = new SignUPModel( resultSet.getString("Username"),resultSet.getString("Full Name"), resultSet.getString("Password"), resultSet.getString("Gender"));
+                list.add(su_model);
+            }
+            return list;
+        }
+
+    }
+
     public int user_add(SignUPModel model){
 
 
