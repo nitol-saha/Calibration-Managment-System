@@ -52,6 +52,7 @@ public class UserAuthController implements Initializable {
 
         int count = query.autho_user(un_auth_list.getValue().toString());
         int count1 = query.del_autho(un_auth_list.getValue().toString());
+
         refreshTable();
 
 

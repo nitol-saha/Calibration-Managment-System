@@ -70,4 +70,14 @@ public class MenuController {
 
     }
 
+    public void LogoutWindow (ActionEvent event) throws  IOException {
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        Stage primaryStage= new Stage();
+        Parent root= FXMLLoader.load(getClass().getResource("Login.fxml"));
+        primaryStage.setTitle("Login Window");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+
+    }
+
 }

@@ -8,7 +8,7 @@
 
 <AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.MenuController">
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcc1c6" height="60.0" layoutX="114.0" layoutY="30.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="462.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcc1c6" height="347.0" layoutX="114.0" layoutY="152.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="462.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcc1c6" height="402.0" layoutX="114.0" layoutY="152.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="462.0" />
    <Button layoutX="150.0" layoutY="189.0" mnemonicParsing="false" onAction="#SensorWindow" prefHeight="52.0" prefWidth="168.0" text="Sensor" />
    <Button layoutX="370.0" layoutY="189.0" mnemonicParsing="false" onAction="#StandardDeviceWindow" prefHeight="52.0" prefWidth="168.0" text="Standard Device" />
    <Button layoutX="150.0" layoutY="295.0" mnemonicParsing="false" onAction="#EquipmentWindow" prefHeight="52.0" prefWidth="168.0" text="Equipment" />
@@ -20,4 +20,5 @@
          <Font size="36.0" />
       </font>
    </Text>
+   <Button fx:id="logoutWin" layoutX="259.0" layoutY="478.0" mnemonicParsing="false" onAction="#LogoutWindow" prefHeight="52.0" prefWidth="168.0" text="Logout" textFill="#d71616" />
 </AnchorPane>
