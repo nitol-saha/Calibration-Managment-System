@@ -6,19 +6,23 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.SensorController">
    <children>
-      <Button fx:id="SenAdd" layoutX="14.0" layoutY="534.0" mnemonicParsing="false" onAction="#add_sen" prefHeight="52.0" prefWidth="168.0" text="Sensor Add" />
-      <Button fx:id="SenUpdate" layoutX="373.0" layoutY="471.0" mnemonicParsing="false" onAction="#delete_sen" prefHeight="52.0" prefWidth="168.0" text="Sensor Update" />
-      <Button fx:id="SenDelete" layoutX="182.0" layoutY="471.0" mnemonicParsing="false" onAction="#delete_sen" prefHeight="52.0" prefWidth="168.0" text="Sensor Delete" />
-      <Button layoutX="508.0" layoutY="534.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="52.0" prefWidth="168.0" text="Menu" />
-      <TextField fx:id="SenID" layoutX="45.0" layoutY="36.0" promptText="Sensor ID" />
-      <TextField fx:id="SenName" layoutX="202.0" layoutY="36.0" promptText="Sensor Name" />
-      <TextField fx:id="SenModel" layoutX="360.0" layoutY="36.0" promptText="Model" />
-      <TextField fx:id="SenSerialNo" layoutX="520.0" layoutY="36.0" promptText="Serial Number" />
-      <Button fx:id="SenSelect" layoutX="98.0" layoutY="107.0" mnemonicParsing="false" onAction="#select_sen" prefHeight="52.0" prefWidth="168.0" text="Select Sensor" />
-      <TableView fx:id="sen_table" layoutX="24.0" layoutY="247.0" prefHeight="200.0" prefWidth="653.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="73.0" layoutY="527.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="98.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <Button fx:id="SenAdd" layoutX="34.0" layoutY="544.0" mnemonicParsing="false" onAction="#add_sen" prefHeight="40.0" prefWidth="120.0" text="Sensor Add" />
+      <Button fx:id="SenUpdate" layoutX="160.0" layoutY="544.0" mnemonicParsing="false" onAction="#delete_sen" prefHeight="40.0" prefWidth="120.0" text="Sensor Update" />
+      <Button fx:id="SenDelete" layoutX="287.0" layoutY="544.0" mnemonicParsing="false" onAction="#delete_sen" prefHeight="40.0" prefWidth="120.0" text="Sensor Delete" />
+      <Button layoutX="538.0" layoutY="544.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="40.0" prefWidth="120.0" text="Menu" />
+      <TextField fx:id="SenID" layoutX="36.0" layoutY="25.0" promptText="Sensor ID" />
+      <TextField fx:id="SenName" layoutX="36.0" layoutY="59.0" promptText="Sensor Name" />
+      <TextField fx:id="SenModel" layoutX="201.0" layoutY="25.0" promptText="Model" />
+      <TextField fx:id="SenSerialNo" layoutX="201.0" layoutY="59.0" promptText="Serial Number" />
+      <Button fx:id="SenSelect" layoutX="412.0" layoutY="544.0" mnemonicParsing="false" onAction="#select_sen" prefHeight="40.0" prefWidth="120.0" text="Select Sensor" />
+      <TableView fx:id="sen_table" layoutX="24.0" layoutY="118.0" prefHeight="392.0" prefWidth="653.0">
          <columns>
             <TableColumn fx:id="sen_table_col_sen_id" prefWidth="120.0" text="Sensor ID" />
             <TableColumn fx:id="sen_table_col_sen_name" prefWidth="204.0" text="Sensor Name" />
@@ -27,7 +31,7 @@
             <TableColumn fx:id="sen_table_col_eq_id" prefWidth="167.0" text="Equipment ID" />
          </columns>
       </TableView>
-      <ChoiceBox fx:id="eq_choicebox" layoutX="427.0" layoutY="95.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="eq_choicebox_sen" layoutX="434.0" layoutY="95.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="eq_choicebox_sen" layoutX="510.0" layoutY="42.0" prefWidth="150.0" />
+      <Text layoutX="376.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Associated Equipment" />
    </children>
 </AnchorPane>

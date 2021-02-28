@@ -5,16 +5,20 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.StandardScheduleController">
    <children>
-      <ChoiceBox fx:id="sd_id_choicebox" layoutX="28.0" layoutY="23.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="month_choicebox" layoutX="188.0" layoutY="23.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="week_choicebox" layoutX="350.0" layoutY="23.0" prefWidth="150.0" />
-      <Button layoutX="518.0" layoutY="544.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="52.0" prefWidth="168.0" text="Menu" />
-      <ChoiceBox fx:id="frequency_checkbox" layoutX="518.0" layoutY="23.0" prefWidth="150.0" />
-      <Button fx:id="add_schedule" layoutX="266.0" layoutY="534.0" mnemonicParsing="false" onAction="#add_sd_schedule" prefHeight="52.0" prefWidth="168.0" text="Add Schedule" />
-      <TableView fx:id="sche_table" layoutX="12.0" layoutY="151.0" prefHeight="200.0" prefWidth="662.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="73.0" layoutX="-1.0" layoutY="527.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="95.0" layoutY="1.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <ChoiceBox fx:id="sd_id_choicebox" layoutX="176.0" layoutY="21.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="month_choicebox" layoutX="176.0" layoutY="58.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="week_choicebox" layoutX="457.0" layoutY="58.0" prefWidth="150.0" />
+      <Button layoutX="360.0" layoutY="544.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="40.0" prefWidth="120.0" text="Menu" />
+      <ChoiceBox fx:id="frequency_checkbox" layoutX="458.0" layoutY="21.0" prefWidth="150.0" />
+      <Button fx:id="add_schedule" layoutX="218.0" layoutY="544.0" mnemonicParsing="false" onAction="#add_sd_schedule" prefHeight="40.0" prefWidth="120.0" text="Add Schedule" />
+      <TableView fx:id="sche_table" layoutX="19.0" layoutY="104.0" prefHeight="418.0" prefWidth="662.0">
         <columns>
           <TableColumn fx:id="col_sd_id" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="col_jan" prefWidth="55.0" text="JAN" />
@@ -31,5 +35,9 @@
             <TableColumn fx:id="col_dec" prefWidth="55.0" text="DEC" />
         </columns>
       </TableView>
+      <Text layoutX="65.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Standard Device ID" />
+      <Text layoutX="357.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Week Selection" />
+      <Text layoutX="360.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month Selection" />
+      <Text layoutX="57.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calibration Frequecy" />
    </children>
 </AnchorPane>

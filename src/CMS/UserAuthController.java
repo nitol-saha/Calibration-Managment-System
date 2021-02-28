@@ -46,15 +46,24 @@ public class UserAuthController implements Initializable {
         primaryStage.show();
 
 
-
     }
 
-    public void auth_user (ActionEvent event){
+    public void auth_user(ActionEvent event) {
 
         int count = query.autho_user(un_auth_list.getValue().toString());
+        int count1 = query.del_autho(un_auth_list.getValue().toString());
+        refreshTable();
 
 
     }
 
+    private void refreshTable() {
+        try {
+            un_auth_list.setItems(query.get_un_auth_id_list());
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
 
+
+    }
 }

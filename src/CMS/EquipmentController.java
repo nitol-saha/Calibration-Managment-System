@@ -64,7 +64,6 @@ public class EquipmentController  implements Initializable {
         eq_table_col_facility_name.setCellValueFactory(new PropertyValueFactory<EquipmentModel, String>("facility_name"));
         try {
             eq_table.setItems(query.get_eq_list());
-            eq_choicebox.setItems(query.get_eq_id_list());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -116,7 +115,7 @@ public class EquipmentController  implements Initializable {
 
 
 
-            eq_choicebox.setItems(query.get_eq_id_list());
+
 
 
         }

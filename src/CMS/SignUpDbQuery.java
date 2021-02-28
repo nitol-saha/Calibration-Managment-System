@@ -54,6 +54,7 @@ public class SignUpDbQuery {
 
         String query= "INSERT INTO `cms`.`login_table` (`Username`, `Password`) SELECT `Username`, `Password` FROM `cms`.`signup_table` WHERE `signup_table`.`Username`=?";
 
+
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, user_id);
             int result = statement.executeUpdate();
@@ -66,7 +67,35 @@ public class SignUpDbQuery {
 
             return 0;
         }
+
+
+
     }
+
+
+    public int del_autho(String user_id){
+
+
+        String query="DELETE FROM `cms`.`signup_table` WHERE `signup_table`.`Username` = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, user_id);
+            int result = statement.executeUpdate();
+            return result;
+        }
+
+        catch (SQLException throwables) {
+            throwables.printStackTrace();
+
+            return 0;
+        }
+
+
+
+
+    }
+
+
 
 
 }

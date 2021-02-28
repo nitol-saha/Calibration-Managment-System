@@ -3,11 +3,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.UserAuthController">
    <children>
-      <ChoiceBox fx:id="un_auth_list" layoutX="222.0" layoutY="115.0" prefWidth="150.0" />
-      <Button fx:id="AuthUser" layoutX="191.0" layoutY="224.0" mnemonicParsing="false" onAction="#auth_user" prefHeight="52.0" prefWidth="168.0" text="Authorize User" />
-      <Button fx:id="MenuButton" layoutX="377.0" layoutY="224.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="52.0" prefWidth="168.0" text="Menu" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="73.0" layoutY="-2.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="73.0" layoutY="526.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <ChoiceBox fx:id="un_auth_list" layoutX="317.0" layoutY="22.0" prefWidth="150.0" />
+      <Button fx:id="AuthUser" layoutX="226.0" layoutY="546.0" mnemonicParsing="false" onAction="#auth_user" prefHeight="40.0" prefWidth="120.0" text="Authorize User" />
+      <Button fx:id="MenuButton" layoutX="362.0" layoutY="544.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="40.0" prefWidth="120.0" text="Menu" />
+      <Text layoutX="173.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unauthorize User List" />
    </children>
 </AnchorPane>
