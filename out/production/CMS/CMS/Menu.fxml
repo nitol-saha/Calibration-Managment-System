@@ -7,5 +7,7 @@
    <Button layoutX="178.0" layoutY="226.0" mnemonicParsing="false" onAction="#SensorWindow" prefHeight="52.0" prefWidth="168.0" text="Sensor" />
    <Button layoutX="374.0" layoutY="226.0" mnemonicParsing="false" onAction="#StandardDeviceWindow" prefHeight="52.0" prefWidth="168.0" text="Standard Device" />
    <Button layoutX="178.0" layoutY="303.0" mnemonicParsing="false" onAction="#EquipmentWindow" prefHeight="52.0" prefWidth="168.0" text="Equipment" />
-   <Button fx:id="SdScheduke" layoutX="374.0" layoutY="303.0" mnemonicParsing="false" onAction="#StandardScheduleWindow" prefHeight="52.0" prefWidth="168.0" text="Stadard Device Schedule" />
+   <Button fx:id="SdSchedule" layoutX="374.0" layoutY="303.0" mnemonicParsing="false" onAction="#StandardScheduleWindow" prefHeight="52.0" prefWidth="168.0" text="Stadard Device Schedule" />
+   <Button fx:id="SenSchedule" layoutX="178.0" layoutY="375.0" mnemonicParsing="false" onAction="#SensorScheduleWindow" prefHeight="52.0" prefWidth="168.0" text="Sensor Schedule" />
+   <Button fx:id="AuthUser" layoutX="374.0" layoutY="375.0" mnemonicParsing="false" onAction="#AuthorizeUserWindow" prefHeight="52.0" prefWidth="168.0" text="Authorize User" />
 </AnchorPane>

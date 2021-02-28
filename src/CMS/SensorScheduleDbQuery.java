@@ -8,18 +8,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StandardScheduleDbQuery {
+public class SensorScheduleDbQuery {
 
     Connection connection;
 
-    public StandardScheduleDbQuery() {
+    public SensorScheduleDbQuery() {
         connection = DBConnector.connect();
     }
 
 
-    public ObservableList<String> get_sd_id_list() throws SQLException {
+    public ObservableList<String> get_sen_id_list() throws SQLException {
         ObservableList<String> list = FXCollections.observableArrayList();
-        try (ResultSet resultSet = connection.createStatement().executeQuery("select *  from standard_device_table")) {
+        try (ResultSet resultSet = connection.createStatement().executeQuery("select *  from sensor_table")) {
             while (resultSet.next()) {
                 list.add(resultSet.getString("ID"));
             }
@@ -31,21 +31,21 @@ public class StandardScheduleDbQuery {
 
     public ObservableList<ScheduleModel> get_schedule_list() throws SQLException {
         ObservableList<ScheduleModel> list= FXCollections.observableArrayList();
-        try (ResultSet resultSet = connection.createStatement().executeQuery("select * from standard_month")) {
+        try (ResultSet resultSet = connection.createStatement().executeQuery("select * from sensor_month")) {
             while (resultSet.next()){
-                ScheduleModel sd_sch_model = new ScheduleModel(resultSet.getString("ID"), resultSet.getString("January"),resultSet.getString("February"),resultSet.getString("March")
-                , resultSet.getString("April"), resultSet.getString("May"), resultSet.getString("June"), resultSet.getString("July"), resultSet.getString("August"),
+                ScheduleModel sen_sch_model = new ScheduleModel(resultSet.getString("ID"), resultSet.getString("January"),resultSet.getString("February"),resultSet.getString("March")
+                        , resultSet.getString("April"), resultSet.getString("May"), resultSet.getString("June"), resultSet.getString("July"), resultSet.getString("August"),
                         resultSet.getString("September"), resultSet.getString("October"), resultSet.getString("November"), resultSet.getString("December"));
-                list.add(sd_sch_model);
+                list.add(sen_sch_model);
             }
             return list;
         }
 
     }
 
-    public int add_sd_schedule(ScheduleInsertModel model){
+    public int add_sen_schedule(ScheduleInsertModel model){
         System.out.println(model.getMonth());
-        String query= "INSERT INTO `cms`.`standard_month` (`ID`,"+model.getMonth()+" ) VALUES (?,?)";
+        String query= "INSERT INTO `cms`.`sensor_month` (`ID`,"+model.getMonth()+" ) VALUES (?,?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, model.getSd_id());
             statement.setString(2, model.getWeek());
@@ -55,39 +55,18 @@ public class StandardScheduleDbQuery {
 
         catch (SQLException throwables) {
             throwables.printStackTrace();
-
             return 0;
         }
 
     }
 
-    public int update_sd_schedule(ScheduleInsertModel model){
+    public int update_sen_schedule(ScheduleInsertModel model){
         System.out.println(model.getMonth());
-        String query= "UPDATE `cms`.`standard_month` SET "+model.getMonth()+"= ? WHERE `ID`=?";
+        String query= "UPDATE `cms`.`sensor_month` SET "+model.getMonth()+"= ? WHERE `ID`=?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, model.getWeek());
             statement.setString(2, model.getSd_id());
-            int result= statement.executeUpdate();
-            return result;
-        }
-
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
-
-            return 0;
-        }
-
-    }
-
-
-    public int add_sd(StandardDeviceModel model){
-        String query= "INSERT INTO `cms`.`login_table` (`ID`, `Standard Device Name`, `Standard Device Model`,`Serial No`) VALUES (?,?,?,?)";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, model.getSd_id());
-            statement.setString(2, model.getSd_name());
-            statement.setString(3, model.getSd_model());
-            statement.setString(4, model.getSd_serial_no());
             int result= statement.executeUpdate();
             return result;
         }

@@ -1,8 +1,8 @@
 package CMS;
 
-public class StandardScheduleInsertModel {
+public class ScheduleInsertModel {
     private String sd_id,month,week;
-    public StandardScheduleInsertModel(String sd_id, String month, String week) {
+    public ScheduleInsertModel(String sd_id, String month, String week) {
         this.sd_id = sd_id;
         this.month = month;
         this.week = week;

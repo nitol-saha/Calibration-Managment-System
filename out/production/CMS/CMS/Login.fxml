@@ -5,12 +5,32 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.LoginController">
    <children>
-      <TextField fx:id="user" layoutX="262.0" layoutY="155.0" promptText="Username" />
-      <PasswordField fx:id="pass" layoutX="262.0" layoutY="199.0" promptText="Password" />
-      <Button layoutX="285.0" layoutY="256.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="97.0" text="Login" />
-      <Label fx:id="msg" layoutX="285.0" layoutY="320.0" prefHeight="34.0" prefWidth="116.0" text="Label" />
+      <TextField fx:id="user" layoutX="425.0" layoutY="137.0" prefHeight="34.0" prefWidth="215.0" promptText="Username" />
+      <PasswordField fx:id="pass" layoutX="425.0" layoutY="185.0" prefHeight="34.0" prefWidth="215.0" promptText="Password" />
+      <Button layoutX="425.0" layoutY="265.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="103.0" text="Login" />
+      <Label fx:id="msg" layoutX="426.0" layoutY="230.0" prefHeight="22.0" prefWidth="215.0" />
+      <Button layoutX="537.0" layoutY="265.0" mnemonicParsing="false" onAction="#SignupWindow" prefHeight="34.0" prefWidth="103.0" text="Sign Up" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce2e8" height="600.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="336.0" />
+      <Text layoutX="48.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGEMENT" wrappingWidth="223.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="57.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALIBRATION" wrappingWidth="215.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="97.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SYSTEM" wrappingWidth="124.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

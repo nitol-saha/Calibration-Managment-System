@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="600.0" minWidth="700.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CMS.SensorScheduleController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="73.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cbd9e8" height="73.0" layoutY="532.0" stroke="#f2e8e8" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+      <ChoiceBox fx:id="sen_id_choicebox" layoutX="126.0" layoutY="6.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="month_choicebox" layoutX="188.0" layoutY="117.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="week_choicebox" layoutX="360.0" layoutY="33.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="frequency_checkbox" layoutX="528.0" layoutY="33.0" prefWidth="150.0" />
+      <TableView fx:id="sche_table" layoutX="22.0" layoutY="161.0" prefHeight="200.0" prefWidth="662.0">
+         <columns>
+            <TableColumn fx:id="col_sen_id" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="col_jan" prefWidth="55.0" text="JAN" />
+            <TableColumn fx:id="col_feb" prefWidth="47.0" text="FEB" />
+            <TableColumn fx:id="col_mar" prefWidth="44.0" text="MAR" />
+            <TableColumn fx:id="col_apr" prefWidth="44.0" text="APR" />
+            <TableColumn fx:id="col_may" prefWidth="43.0" text="MAY" />
+            <TableColumn fx:id="col_jun" minWidth="2.0" prefWidth="53.0" text="JUN" />
+            <TableColumn fx:id="col_jul" minWidth="0.0" prefWidth="38.0" text="JUL" />
+            <TableColumn fx:id="col_aug" minWidth="0.0" prefWidth="56.0" text="AUG" />
+            <TableColumn fx:id="col_sep" minWidth="2.0" prefWidth="51.0" text="SEP" />
+            <TableColumn fx:id="col_oct" minWidth="0.0" prefWidth="49.0" text="OCT" />
+            <TableColumn fx:id="col_nov" prefWidth="50.0" text="NOV" />
+            <TableColumn fx:id="col_dec" prefWidth="55.0" text="DEC" />
+         </columns>
+      </TableView>
+      <Button layoutX="373.0" layoutY="545.0" mnemonicParsing="false" onAction="#MenuWindow" prefHeight="40.0" prefWidth="120.0" text="Menu" />
+      <Button fx:id="add_schedule" layoutX="217.0" layoutY="547.0" mnemonicParsing="false" onAction="#add_sen_schedule" prefHeight="40.0" prefWidth="120.0" text="Add Schedule" />
+      <Text layoutX="64.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor ID" />
+   </children>
+</AnchorPane>

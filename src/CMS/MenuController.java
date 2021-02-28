@@ -50,4 +50,24 @@ public class MenuController {
 
     }
 
+    public void SensorScheduleWindow (ActionEvent event) throws  IOException {
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        Stage primaryStage= new Stage();
+        Parent root= FXMLLoader.load(getClass().getResource("SensorSchedule.fxml"));
+        primaryStage.setTitle("Sensor Schedule");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+
+    }
+
+    public void AuthorizeUserWindow (ActionEvent event) throws  IOException {
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        Stage primaryStage= new Stage();
+        Parent root= FXMLLoader.load(getClass().getResource("UserAuth.fxml"));
+        primaryStage.setTitle("User Authorization");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+
+    }
+
 }

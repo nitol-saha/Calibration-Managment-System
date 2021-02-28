@@ -1,10 +1,10 @@
 package CMS;
 
-public class StandardScheduleModel {
+public class ScheduleModel {
 
     private String sd_id, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec;
 
-    public StandardScheduleModel(String sd_id, String jan, String feb, String mar, String apr, String may, String jun, String jul, String aug, String sep, String oct, String nov, String dec) {
+    public ScheduleModel(String sd_id, String jan, String feb, String mar, String apr, String may, String jun, String jul, String aug, String sep, String oct, String nov, String dec) {
         this.sd_id = sd_id;
         this.jan = jan;
         this.feb = feb;
